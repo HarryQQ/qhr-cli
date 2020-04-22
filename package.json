@@ -1,0 +1,48 @@
+{
+  "name": "@qhr/qhr-cli",
+  "version": "1.0.0",
+  "description": "npm package scaffold",
+  "main": "index.js",
+  "scripts": {
+    "release-patch": "scripts/release.sh -r patch",
+    "release-minor": "scripts/release.sh",
+    "release-major": "scripts/release.sh -r major",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HarryQQ/qhr-cli.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "qhr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HarryQQ/qhr-cli/issues"
+  },
+  "homepage": "https://github.com/HarryQQ/qhr-cli#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "inquirer": "^6.5.2",
+    "ora": "^3.2.0"
+  },
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0"
+  },
+  "bin": {
+    "qhr": "bin/qhr",
+    "qhr-add": "bin/qhr-add",
+    "qhr-delete": "bin/qhr-delete",
+    "qhr-list": "bin/qhr-list",
+    "qhr-init": "bin/qhr-init"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

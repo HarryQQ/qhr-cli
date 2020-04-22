@@ -1,0 +1,20 @@
+#!/usr/bin/env node
+const program = require('commander')
+
+// 修改控制台字符串的样式
+const chalk = require('chalk')
+// node 内置文件模块
+const fs = require('fs')
+// 定义当前版本
+// 定义使用方法
+// 定义四个指令
+program
+  .version(require('../package').version)
+  .usage('<command> [options]')
+  .command('add', 'add a new template')
+  .command('delete', 'delete a template')
+  .command('list', 'list all the templates')
+  .command('init', 'generate a new project from a template')
+
+// 解析命令行参数
+program.parse(process.argv)
