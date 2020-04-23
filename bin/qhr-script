@@ -1,0 +1,28 @@
+#!/usr/bin/env node
+const path = require('path');
+const resolve = (dir) => {
+  return path.join(__dirname, dir)
+}
+const chalk = require('chalk')
+const ncp = require('ncp').ncp; // 用于复制文件夹
+const fs = require('fs')
+
+// 复制scripts文件夹到执行目录
+console.log(chalk.white('\n Start generating... \n '))
+ncp(resolve('../scripts'), 'scripts', function (err) {
+  if (err) {
+    return console.log(chalk.red(`Generation failed. ${err}`));
+  }
+  // 读取根目录下的 package.json
+
+  const packageObj = require(process.cwd() + '/package')
+  // 给package.json添加参数
+  packageObj['scripts']['release-patch'] = "scripts/release.sh -r patch"
+  packageObj['scripts']['release-minor'] = "scripts/release.sh"
+  packageObj['scripts']['release-major'] = "scripts/release.sh -r major"
+  // 重新写入package.json文件
+  fs.writeFile(process.cwd() + '/package.json', JSON.stringify(packageObj), 'utf-8', err => {
+    if (err) console.log(err)
+    console.log(chalk.green('success!\n'))
+  })
+});

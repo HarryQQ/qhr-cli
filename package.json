@@ -1,5 +1,5 @@
 {
-  "name": "@qhr/qhr-cli",
+  "name": "qhr-cli",
   "version": "1.1.0",
   "description": "npm package scaffold",
   "main": "index.js",
@@ -31,14 +31,17 @@
   },
   "devDependencies": {
     "cz-conventional-changelog": "^3.1.0",
-    "eslint": "^6.8.0"
+    "eslint": "^6.8.0",
+    "ncp": "^2.0.0"
   },
   "bin": {
     "qhr": "bin/qhr",
     "qhr-add": "bin/qhr-add",
     "qhr-delete": "bin/qhr-delete",
     "qhr-list": "bin/qhr-list",
-    "qhr-init": "bin/qhr-init"
+    "qhr-init": "bin/qhr-init",
+    "qhr-edit": "bin/qhr-edit",
+    "qhr-script": "bin/qhr-script"
   },
   "config": {
     "commitizen": {

@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+const fs = require('fs')
+const chalk = require('chalk')
+const ora = require('ora')
+
+const path = require('path');
+const resolve = (dir) => {
+  return path.join(__dirname, dir)
+}
+
+console.log(chalk.white('\n Start generating... \n '))
+fs.copyFile(resolve('../.editorconfig'),'.editorconfig',function(err){
+  if(err) console.log(chalk.red(`Generation failed. ${err}`))
+  else console.log(chalk.green('\n editorconfig Generation completed!'))
+})
+
+fs.copyFile(resolve('../.npmignore'),'.npmignore',function(err){
+  if(err) console.log(chalk.red(`Generation failed. ${err}`))
+  else console.log(chalk.green('\n npmignore Generation completed!'))
+})
+
+fs.copyFile(resolve('../.gitignore'),'.gitignore',function(err){
+  if(err) console.log(chalk.red(`Generation failed. ${err}`))
+  else console.log(chalk.green('\n gitignore Generation completed!'))
+})
