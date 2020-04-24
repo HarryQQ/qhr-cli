@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/HarryQQ/qhr-cli/compare/prefix_v1.2.0...prefix_v1.3.0) (2020-04-24)
+
+
+### Bug Fixes
+
+* change devdepencies to dependences ([2ebd8e4](https://github.com/HarryQQ/qhr-cli/commit/2ebd8e4aab152f05653480f51fb8bec7384fd618))
+
 ## [1.2.0](https://github.com/HarryQQ/qhr-cli/compare/prefix_v1.1.1...prefix_v1.2.0) (2020-04-24)
 
 
