@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# 作用：1.使用standard-version改版本号 2.自动推送代码并打tag
+
 # 获取命令行上的参数 -r 为release级别 -b 为分支名
 while [[ "$#" > 0 ]]; do case $1 in
   -r|--release) release="$2"; shift;;
