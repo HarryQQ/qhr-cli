@@ -4,12 +4,12 @@ const resolve = (dir) => {
   return path.join(__dirname, dir)
 }
 const chalk = require('chalk')
-const ncp = require('ncp').ncp; // 用于复制文件夹
+const ncp = require('ncp'); // 用于复制文件夹
 const fs = require('fs')
 
 // 复制scripts文件夹到执行目录
 console.log(chalk.white('\n Start generating... \n '))
-ncp(resolve('../scripts'), 'scripts', function (err) {
+ncp.ncp(resolve('../scripts'), 'scripts', function (err) {
   if (err) {
     return console.log(chalk.red(`Generation failed. ${err}`));
   }
